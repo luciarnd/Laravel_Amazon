@@ -1,0 +1,402 @@
+{
+	"info": {
+		"_postman_id": "8a26b4b5-9b88-4c92-9a06-d02c16a88cf8",
+		"name": "Laravel Amazon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23613807"
+	},
+	"item": [
+		{
+			"name": "One to one",
+			"item": [
+				{
+					"name": "POST_userregister",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/register?name=Pedro&email=pedro@gmail.com&apellido=Gomez&password=olaola&c_password=olaola&telefono=635743682",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"register"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Pedro"
+								},
+								{
+									"key": "email",
+									"value": "pedro@gmail.com"
+								},
+								{
+									"key": "apellido",
+									"value": "Gomez"
+								},
+								{
+									"key": "password",
+									"value": "olaola"
+								},
+								{
+									"key": "c_password",
+									"value": "olaola"
+								},
+								{
+									"key": "telefono",
+									"value": "635743682"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/user/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_subscriptionOfUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/user/1/subscription",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"user",
+								"1",
+								"subscription"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_subscription",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/subscription?plan=Duo&fechainicio=12/09/2022&fechacaducidad=12/10/2022&user_id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"subscription"
+							],
+							"query": [
+								{
+									"key": "plan",
+									"value": "Duo"
+								},
+								{
+									"key": "fechainicio",
+									"value": "12/09/2022"
+								},
+								{
+									"key": "fechacaducidad",
+									"value": "12/10/2022"
+								},
+								{
+									"key": "user_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_Subscription",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/subscription/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"subscription",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_userOfSubscription",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/subscription/2/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"subscription",
+								"2",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Many to Many",
+			"item": [
+				{
+					"name": "POST_producto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/producto?precio=3&fabricante=Hacendado&descripcion=Macarrones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"producto"
+							],
+							"query": [
+								{
+									"key": "precio",
+									"value": "3"
+								},
+								{
+									"key": "fabricante",
+									"value": "Hacendado"
+								},
+								{
+									"key": "descripcion",
+									"value": "Macarrones"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_producto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/producto/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"producto",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_PedidodeProdcuto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/producto/2/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"producto",
+								"2",
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post_añadirProductoaPedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/pedido/4/producto/2/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"pedido",
+								"4",
+								"producto",
+								"2",
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_listProductosDePedido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/pedido/4/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"pedido",
+								"4",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "One To Many",
+			"item": [
+				{
+					"name": "POST_pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/pedido?fecha=21/09/2022&precio_total=22&user_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"pedido"
+							],
+							"query": [
+								{
+									"key": "fecha",
+									"value": "21/09/2022"
+								},
+								{
+									"key": "precio_total",
+									"value": "22"
+								},
+								{
+									"key": "user_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_pedido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/pedido/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"pedido",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_PedidosFromUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/user/2/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"user",
+								"2",
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_UserFromPedido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/pedido/2/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"pedido",
+								"2",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
